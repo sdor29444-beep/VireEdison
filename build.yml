@@ -1,0 +1,15 @@
+name: Compilar VireEdison
+on:
+  workflow_dispatch:
+  push:
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: cmake -B build -A x64
+      - run: cmake --build build --config Release --target VireEQ
+      - uses: actions/upload-artifact@v4
+        with:
+          name: VireEQ-app
+          path: build/VireEQ_artefacts/Release/VireEQ.exe
