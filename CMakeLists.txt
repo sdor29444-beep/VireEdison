@@ -18,11 +18,10 @@ juce_add_plugin(VireEdison
   NEEDS_MIDI_OUTPUT FALSE)
 
 target_sources(VireEdison PRIVATE
-  Source/PluginProcessor.cpp
-  Source/PluginProcessor.h
-  Source/PluginEditor.h
-  Source/License.h)
-
+  PluginProcessor.cpp
+  PluginProcessor.h
+  PluginEditor.h
+  License.h)
 target_compile_definitions(VireEdison PUBLIC
   JUCE_WEB_BROWSER=0
   JUCE_USE_CURL=0
